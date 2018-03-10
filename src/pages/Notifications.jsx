@@ -33,14 +33,23 @@ export default class Notifications extends React.Component {
 
     render() {
         const { notifications } = this.state;
-        console.log(notifications);
+
+        const customStyleCol = {
+            marginBottom: 16,
+        };
+
+
         return (
             <Row gutter={16}>
                 <h3>Notifications récentes</h3>
                 {notifications.map(n =>
-                    <Col span={8} key={n.id}>
-                        <Card title={ n.type } bordered={false}>
-                        { n.productPosition.position.lane }
+                    <Col span={8} style={customStyleCol} key={n.id}>
+                        <Card title={ n.type } bordered={true}>
+                            Position : { n.productPosition.position.lane } { n.productPosition.position.landmark } { n.productPosition.position.section } { n.productPosition.position.shelf }
+                            <br/>
+                            Code EAN13 : { n.productPosition.product.ean13 }
+                            <br/>
+                            <a href="#">Voir sur le plan du hangar</a>
                         </Card>
                     </Col>
                 )}

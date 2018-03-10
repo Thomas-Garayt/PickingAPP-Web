@@ -21,7 +21,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <MainLayout>
-                <Row>
+                <Row gutter={16}>
                     <Col span={12}>
                         <Notifications/>
                         <br/>

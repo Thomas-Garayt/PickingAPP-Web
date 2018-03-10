@@ -15,11 +15,18 @@ export default class MainLayout extends React.Component {
 
     render() {
 
+        const user = LoginStore.getUser();
+
+        const fullName = `${user.firstname.replace(
+            /\w\S*/g,
+            tStr => tStr.charAt(0).toUpperCase() + tStr.substr(1).toLowerCase(),
+        )} ${user.lastname.toUpperCase()}`;
+
         return (
             <div className="layout">
                 <div className="layout-header">
                     <div className="welcome-message">
-                        Bonjour __name__
+                        Bonjour {' '} { fullName }
                     </div>
                     <Button className="pull-right" icon="logout" onClick={this.logout}>
                         {Locale.trans('login.logOut.button')}
