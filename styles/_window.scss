@@ -1,0 +1,121 @@
+// Window
+
+// Variables
+$window-header-background: $black;
+
+$window-background-color: #ececec;
+$window-border-color: $medium-gray;
+$window-focused-border-color: lighten($window-header-background, 20%);
+$window-resizer-color: $medium-gray;
+
+$window-content-padding: 10px;
+
+body {
+    overflow: hidden;
+}
+
+.window {
+    @include box-shadow( 0 0 4px 0 rgba(0,0,0,.3) );
+
+    position: absolute !important;
+    background: $window-background-color;
+    overflow: hidden;
+
+    .window-header {
+        box-sizing: border-box;
+        background: $window-header-background;
+        padding: 0 10px;
+        height: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        line-height: 32px;
+        overflow: hidden;
+    }
+
+    .window-header:hover {
+        cursor: default;
+    }
+    .window-header-previous-action {
+        margin: 0 8px 0 0;
+    }
+    .window-header-title {
+        @include user-select( none );
+
+        position: absolute;
+        display: inline-block;
+        width: calc(100% - 70px);
+        color: white;
+
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .window-header-actions {
+        float: right;
+
+        > button {
+            margin: 0 5px;
+        }
+
+        > button:first-child {
+            margin: 0 5px 0 0;
+        }
+        > button:last-child {
+            margin: 0 0 0 5px;
+        }
+    }
+
+    .window-content {
+        padding: $window-content-padding;
+        overflow: auto;
+        max-height: 100%;
+
+        > .ant-tabs {
+            margin: -$window-content-padding;
+            position: initial;
+        }
+
+        > .ant-tabs > .ant-tabs-content > .ant-tabs-tabpane  {
+            padding: $window-content-padding;
+            padding-top: 0;
+            overflow: auto;
+            max-height: 100%;
+            position: initial;
+        }
+    }
+
+    .window-resize {
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid $window-resizer-color;
+        border-bottom: 1px solid $window-resizer-color;
+        z-index: 2000;
+    }
+    .window-resize:hover {
+        cursor: se-resize;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .window {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+}
+
+.window:not(.focus) {
+    border: 1px solid $window-border-color;
+    .window-header {
+        opacity: .9;
+    }
+}
+.window.focus {
+    border: 1px solid $window-focused-border-color;
+}

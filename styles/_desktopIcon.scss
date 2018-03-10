@@ -1,0 +1,30 @@
+// Desktop Icons 
+
+// Variables
+$desktop-icon-background-color: #3f759b;
+
+.desktop-icon {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 2px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0);
+
+    > .icon {
+        height: calc(100% - 1rem);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        > img {
+            max-height: 100%;
+            height: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.desktop-icon:hover {
+    background: rgba( $desktop-icon-background-color, .1 );
+    border: 1px solid $desktop-icon-background-color;
+}

@@ -1,0 +1,9 @@
+.chart .title {
+    text-align: center;
+}
+
+.chart.chart-group {
+    .line {
+        stroke: $secondary-color;
+    }
+}

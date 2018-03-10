@@ -1,0 +1,49 @@
+$absence-validated-color: $primary-color;
+$absence-requested-color: rgba($primary-color, .5);
+
+.absence-planning-day {
+    background: $absence-validated-color;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &.morning {
+        bottom: 50%;
+    }
+
+    &.afternoon {
+        top: 50%;
+    }
+
+    &.no-working {
+        background: rgba($medium-gray, .5);
+    }
+
+    &.requested {
+        background: $absence-requested-color;
+    }
+}
+
+.legends > div {
+    float: left;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.legend-thumbnail {
+    float: left;
+    width: 32px;
+    height: 16px;
+    margin-right: 8px;
+
+    &.absence-validated {
+        background: $absence-validated-color;
+    }
+
+    &.absence-requested {
+        background: $absence-requested-color;
+    }
+}

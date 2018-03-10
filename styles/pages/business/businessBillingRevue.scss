@@ -1,0 +1,182 @@
+.business-billing-revue-menu-popover {
+    .ant-popover-title {
+        background: rgba(74, 109, 190, 0.2);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+
+.business-billing-revue {
+    .total-revenu {
+        float: right;
+    }
+
+    td.month-billing {
+        padding: 0;
+        text-align: right;
+    }
+    th.month-billing {
+        padding: 0;
+        text-align: center;
+
+        .month-btn {
+            padding: 8px;
+        }
+        .month-btn.selected {
+            color: #108ee9;
+        }
+    }
+
+    .ant-table-body {
+        height: 240px;
+    }
+
+    .month-billing > div {
+        padding: 8px;
+        padding: 8px 8px 8px 0;
+    }
+    .footer {
+        position: relative;
+        height: 24px;
+        .footer-month {
+            width: 6.65%;
+            position: absolute;
+            text-align: right;
+            height: 24px;
+            line-height: 24px;
+        }
+    }
+
+    .ant-table-scroll > .ant-table-footer {
+        padding-right: 45px;
+    }
+
+    td.business-reference {
+        padding: 0;
+
+        > div {
+            padding: 8px;
+        }
+    }
+
+    div[role='button'] {
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(74, 109, 190, 0.25);
+        }
+        &:active {
+            background-color: rgba(74, 109, 190, 0.3);
+        }
+        &:focus {
+            outline: none;
+            color: rgba($black, 0.65);
+        }
+    }
+
+    .year-history {
+        text-align: center;
+        margin-top: 8px;
+        .ant-btn {
+            margin: 0 4px;
+        }
+    }
+}
+
+.month-billing-menu-item {
+    text-align: right;
+}
+
+.month-billing-menu-item.ant-dropdown-menu-item-selected {
+    color: rgba($black, 0.65);
+}
+
+.month-billing-menu-item,
+.business-billing-revue .month-billing > div {
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(74, 109, 190, 0.25);
+    }
+    &:active {
+        background-color: rgba(74, 109, 190, 0.3);
+    }
+    &:focus {
+        outline: none;
+    }
+
+    .anticon,
+    .ant-badge {
+        float: left;
+        margin-left: 8px;
+        margin-top: 4px;
+    }
+
+    .anticon {
+        color: $danger-color;
+    }
+
+    .ant-badge > .ant-badge-count {
+        height: 14px;
+        min-width: 14px;
+        line-height: 14px;
+        font-size: 10px;
+        padding: 0 3px;
+        background: $secondary-color;
+    }
+
+    &.primary {
+        background-color: rgba($primary-color, 0.5);
+        &:hover {
+            background-color: rgba($primary-color, 0.75);
+        }
+        &:active {
+            background-color: rgba($primary-color, 0.9);
+        }
+    }
+
+    &.success {
+        background-color: rgba($success-color, 0.5);
+        &:hover {
+            background-color: rgba($success-color, 0.75);
+        }
+        &:active {
+            background-color: rgba($success-color, 0.9);
+        }
+    }
+}
+
+// Charts
+.business-billing-revue .chart {
+    width: calc(33.333% - 20px);
+    margin: 0 10px;
+    height: 200px;
+    display: inline-block;
+
+    .bar {
+        fill: $primary-color;
+    }
+
+    .section.highlight,
+    .bar.highlight {
+        stroke: $blue;
+    }
+
+    .line {
+        stroke: $primary-color;
+    }
+
+    .yAxis,
+    .xAxis {
+        .domain {
+            stroke: $black;
+        }
+
+        .tick {
+            line {
+                stroke: $black;
+            }
+            text {
+                fill: $black;
+            }
+        }
+    }
+}

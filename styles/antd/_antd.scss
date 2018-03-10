@@ -1,0 +1,319 @@
+body {
+    background-color: $white;
+}
+
+body,
+.ant-table,
+.ant-form,
+.ant-input,
+.ant-select,
+.ant-form-item,
+.ant-menu,
+.ant-dropdown,
+.ant-checkbox-wrapper,
+.ant-calendar-picker-container,
+.ant-tabs {
+    font-family: $font-family !important;
+}
+
+body,
+h1, h2, h3, h4, h5, h6 {
+    color: rgba($black, .65);
+}
+
+// Popover
+.ant-popover-inner-content {
+    .ant-menu-vertical {
+        border: none;
+        margin: 0 -16px;
+        .ant-menu-item {
+            padding: 0 8px;
+        }
+    }
+}
+.menu-popover {
+    padding: 0;
+    .ant-popover-arrow {
+        display: none;
+    }
+}
+
+// Input
+
+.ant-form-item > .ant-form-item,
+.ant-form-item :not(.ant-form) > .ant-form-item {
+    margin-bottom: -24px;
+}
+
+.ant-form-item-label label {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.ant-select-selection,
+.ant-time-picker-input,
+.ant-input {
+    background-color: $white;
+}
+
+.ant-calendar-picker-input:disabled {
+    background: $white;
+    color: rgb(84, 84, 84);
+}
+
+.ant-calendar-picker:hover .ant-input:not([disabled]),
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled),
+.ant-input-affix-wrapper:hover .ant-input,
+.ant-input:hover {
+    border-color: $primary-color;
+}
+
+.ant-calendar-picker:focus .ant-input:not([disabled]),
+.ant-input-affix-wrapper:focus .ant-input,
+.ant-input:focus {
+    @include box-shadow( 0 0 0 2px rgba($primary-color, .2) );
+    border-color: $primary-color;
+}
+
+.input-group-addon {
+    background-color: #eee;
+    border: 1px solid $primary-color;
+
+    // Reset Select's style in addon
+    .ant-select-open,
+    .ant-select-focused {
+        .ant-select-selection {
+            color: $primary-color;
+        }
+    }
+}
+
+.ant-select-selection {
+    &:focus,
+    &:active {
+        @include box-shadow( 0 0 0 2px rgba($primary-color, .2) );
+        border-color: $primary-color;
+    }
+
+    &:hover {
+        border-color: $primary-color;
+    }
+
+    .ant-select-focused & {
+        @include box-shadow( 0 0 0 2px rgba($primary-color, .2) );
+        border-color: $primary-color;
+    }
+}
+
+// Checkbox
+.ant-checkbox {
+
+    &-wrapper:hover .ant-checkbox,
+        &:hover,
+        &-focused {
+        .ant-checkbox-inner {
+            border-color: $primary-color;
+        }
+    }
+
+    &-inner {
+        border: 1px solid $primary-color;
+        background-color: $white;
+
+        &:after {
+            border: 2px solid $white;
+        }
+    }
+
+    &-checked,
+    &-indeterminate {
+        .ant-checkbox-inner {
+            background-color: $primary-color;
+            border-color: $primary-color;
+        }
+    }
+}
+
+// Button
+
+.ant-btn-background-ghost.ant-btn {
+    color: $primary-color;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+
+    &-primary {
+        color: $primary-color;
+        background-color: transparent;
+        border-color: $primary-color;
+
+        &:hover,
+        &:focus {
+            color: lighten($primary-color, 7%);
+            border-color: lighten($primary-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: darken($primary-color, 7%);
+            border-color: darken($primary-color, 7%);
+        }
+    }
+
+    &-danger {
+        color: $white;
+        background-color: transparent;
+        border-color: $danger-color;
+
+        &:hover,
+        &:focus {
+            color: lighten($danger-color, 7%);
+            border-color: lighten($danger-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: darken($danger-color, 7%);
+            border-color: darken($danger-color, 7%);
+        }
+    }
+
+    &-success {
+        color: $white;
+        background-color: transparent;
+        border-color: $success-color;
+
+        &:hover,
+        &:focus {
+            color: lighten($success-color, 7%);
+            border-color: lighten($success-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: darken($success-color, 7%);
+            border-color: darken($success-color, 7%);
+        }
+    }
+
+    &-info {
+        color: $white;
+        background-color: transparent;
+        border-color: $info-color;
+
+        &:hover,
+        &:focus {
+            color: lighten($info-color, 7%);
+            border-color: lighten($info-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: darken($info-color, 7%);
+            border-color: darken($info-color, 7%);
+        }
+    }
+}
+
+.ant-btn {
+    background-color: $white;
+
+    &:hover,
+    &:focus {
+        background-color: $white;
+        color: $primary-color;
+
+        border-color: $primary-color;
+    }
+
+    &-primary {
+        color: $white;
+        background-color: $primary-color;
+        border-color: $primary-color;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: lighten($primary-color, 7%);
+            border-color: lighten($primary-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: $white;
+            background-color: darken($primary-color, 7%);
+            border-color: darken($primary-color, 7%);
+        }
+    }
+
+    &-danger {
+        color: $white;
+        background-color: $danger-color;
+        border-color: $danger-color;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: lighten($danger-color, 7%);
+            border-color: lighten($danger-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: $white;
+            background-color: darken($danger-color, 7%);
+            border-color: darken($danger-color, 7%);
+        }
+    }
+
+    &-success {
+        color: $white;
+        background-color: $success-color;
+        border-color: $success-color;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: lighten($success-color, 7%);
+            border-color: lighten($success-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: $white;
+            background-color: darken($success-color, 7%);
+            border-color: darken($success-color, 7%);
+        }
+    }
+
+    &-info {
+        color: $white;
+        background-color: $info-color;
+        border-color: $info-color;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: lighten($info-color, 7%);
+            border-color: lighten($info-color, 7%);
+        }
+
+        &:active,
+        &.active {
+            color: $white;
+            background-color: darken($info-color, 7%);
+            border-color: darken($info-color, 7%);
+        }
+    }
+}
+
+// Badges
+.ant-badge.error .ant-badge-status-text{
+    color: $danger-color;
+}
+
+@import './table';
+@import './tabs';

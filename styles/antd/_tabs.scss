@@ -1,0 +1,10 @@
+.ant-tabs-nav {
+    .ant-tabs-tab:hover,
+    .ant-tabs-tab-active {
+        color: $primary-color;
+    }
+
+    .ant-tabs-ink-bar {
+        background-color: $primary-color;
+    }
+}

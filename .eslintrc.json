@@ -1,0 +1,26 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:flowtype/recommended"
+    ],
+    "plugins": [
+        "flowtype"
+    ],
+
+    "rules": {
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "max-len": ["error", 100],
+        "linebreak-style": ["error", "windows"],
+        "no-underscore-dangle": "off",
+        "indent": ["warn", 4],
+        "react/jsx-indent": ["warn", 4],
+        "no-plusplus": "off",
+
+        // Prop Types not needed because we use Flow.
+        "react/prop-types": "off",
+        "react/sort-comp": "off",
+        "react/no-unused-prop-types": "off"
+    }
+}

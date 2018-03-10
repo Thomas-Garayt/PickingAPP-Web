@@ -1,0 +1,14 @@
+.user-clocking-refusal-justification {
+    color: $danger-color;
+}
+
+.ant-table-tbody > tr:hover > .disabledConge,
+.disabledConge,
+.disabledConge:hover {
+    background-color: $light-orange;
+}
+
+.editable-cell input {
+    padding-left:4px;
+    padding-right:4px
+}

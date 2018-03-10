@@ -1,0 +1,19 @@
+[ignore]
+.*/node_modules/draft-js/.*
+.*/node_modules/flux/.*
+.*/node_modules/reqwest/.*
+.*/node_modules/eslint-plugin-jsx-a11y/.*
+
+[include]
+
+[libs]
+src/flow_types
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnoreMe
+
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+
+module.name_mapper='\(reqwest\)' -> 'empty/object'
