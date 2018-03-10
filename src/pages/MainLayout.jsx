@@ -4,18 +4,13 @@ import SecurityService from 'services/SecurityService';
 import { Button } from 'antd';
 import Locale from 'locale/LocaleFactory';
 
-import Toasts from 'components/Toasts.jsx';
-
 import LoginActions from 'actions/LoginActions';
 import LoginStore from 'stores/LoginStore';
 
-export default class Layout extends React.Component {
+export default class MainLayout extends React.Component {
+
     logout = () => {
         LoginActions.logoutUser();
-    };
-
-    handleUserClick = () => {
-        const user = LoginStore.getUser();
     };
 
     render() {

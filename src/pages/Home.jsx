@@ -5,9 +5,10 @@ import { Row, Col } from 'antd';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import Locale from 'locale/LocaleFactory';
 
-import Layout from 'pages/Layout.jsx';
+import MainLayout from 'pages/MainLayout.jsx';
 
-const ResponsiveReactGridLayout = WidthProvider(Responsive);
+import Notifications from 'pages/Notifications.jsx';
+import Preparations from 'pages/Preparations.jsx';
 
 export default class Home extends React.Component {
 
@@ -19,13 +20,18 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <MainLayout>
                 <Row>
-                    <Col span={24}>
-                    Page Home
+                    <Col span={12}>
+                        <Notifications/>
+                        <br/>
+                    </Col>
+                    <Col span={12}>
+                        <Preparations/>
+                        <br/>
                     </Col>
                 </Row>
-            </Layout>
+            </MainLayout>
         );
     }
 }

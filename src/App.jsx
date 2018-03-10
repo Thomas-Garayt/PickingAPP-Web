@@ -9,7 +9,6 @@ import frFR from 'antd/lib/locale-provider/fr_FR';
 import LoginActions from 'actions/LoginActions';
 import LoginStore from 'stores/LoginStore';
 
-import Layout from 'pages/Layout.jsx';
 import Login from 'pages/Login.jsx';
 import Home from 'pages/Home.jsx';
 
@@ -29,15 +28,13 @@ const app = document.getElementById('app');
 const routes = (
     <LocaleProvider locale={frFR}>
         <Router history={hashHistory}>
-            {/*
-                <IndexRoute component={Desktop} onEnter={requireAuth} />
-                */}
+            <Route path="login" component={Login} />
             <Route path="home" component={Home}></Route>
-            {/* <Route path="login" component={Login} /> */}
+            {/* <IndexRoute component={Desktop} onEnter={requireAuth} /> */}
         </Router>
     </LocaleProvider>
 );
 
-//LoginActions.loginUserIfRemembered();
+LoginActions.loginUserIfRemembered();
 
 ReactDOM.render(routes, app);
