@@ -12,6 +12,14 @@ import Preparations from 'pages/Preparations.jsx';
 
 export default class Home extends React.Component {
 
+    constructor(props: Props) {
+        super();
+        this.state = {
+          current: 'accueil',
+        }
+    }
+
+
     componentDidMount() {
     }
 
@@ -19,8 +27,9 @@ export default class Home extends React.Component {
     }
 
     render() {
+        const { current } = this.state;
         return (
-            <MainLayout>
+            <MainLayout current={current}>
                 <Row gutter={16}>
                     <Col span={12}>
                         <Notifications/>

@@ -11,6 +11,7 @@ import LoginStore from 'stores/LoginStore';
 
 import Login from 'pages/Login.jsx';
 import Home from 'pages/Home.jsx';
+import Hangar from 'pages/Hangar.jsx';
 
 /**
  * Use
@@ -30,6 +31,7 @@ const routes = (
         <Router history={hashHistory}>
             <Route path="login" component={Login} />
             <Route path="home" component={Home}></Route>
+            <Route path="hangar" component={Hangar}></Route>
             {/* <IndexRoute component={Desktop} onEnter={requireAuth} /> */}
         </Router>
     </LocaleProvider>
