@@ -37,21 +37,47 @@ export default class Positions extends React.Component {
     render() {
         const { positions, current } = this.state;
 
-        let arrayLane = new Array("A"," ","B"," ","C"," ","D"," ","E"," ","F"," ","G"," ","H"," ","I"," ","J"," ","K"," ","L"," ","M"," ","N"," ","O"," ","P"," ","Q"," ","R"," ","S"," ","T"," ","U"," ","V"," ","W"," ","X"," ","Y"," ","Z");
-        let arrayLandMark = new Array("1","2","3","4","5","6","7","8","9","10");
+        let arrayLaneSimple = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 
-/*
-        var currentLane = "";
+        let arrayHangar = new Array();
 
-        for(var i = 0 ; i < positions.length ; i++) {
-            if(positions[i].lane != currentLane) {
-                arrayLane.push(positions[i]);
-                currentLane = positions[i].lane;
+        for(let i = 0 ; i < arrayLaneSimple.length ; i++) {
+
+            let lane = arrayLaneSimple[i];
+            let arrayLane = new Array();
+
+            if(i%2 == 0) {
+                for(let j = 1 ; j <= 10 ; j++) {
+                    let numLandMark = i*10+j;
+                    arrayLane.push(lane + "_" + numLandMark)
+                }
             }
-        }
-*/
+            else {
+                for(let j = 10 ; j >= 1 ; j--) {
+                    let numLandMark = i*10+j;
+                    arrayLane.push(lane + "_" + numLandMark)
+                }
+            }
 
-        console.log(positions);
+            arrayHangar.push(arrayLane);
+        }
+
+        let currentLandMark = "";
+        let currentLane = "";
+        let arrayPositions = new Array();
+
+        for(let i = 0 ; i < positions.length ; i++) {
+
+                if(currentLandMark != positions[i].landmark) {
+                    arrayPositions.push(positions[i]);
+                    currentLandMark = positions[i].landmark;
+                }
+
+                currentLane = positions[i].lane;
+
+        }
+
+        console.log(arrayPositions);
 
         const styleLane = {
             border: '1px solid black',
@@ -68,13 +94,13 @@ export default class Positions extends React.Component {
         return (
             <MainLayout current={current}>
                 <Row gutter={16}>
-                    <h4>HANGAR</h4>
+                    <h4>Hangar</h4>
                     <table bordered='true'>
                         <tbody>
-                        { arrayLandMark.map(landMark =>
+                        { arrayHangar.map(lane =>
                             <tr>
-                            { arrayLane.map(lane =>
-                                lane == " " ? <td style={styleWay}></td> : <td style={styleLane} title={ lane + landMark }></td>
+                            { lane.map(landmark =>
+                                <td style={styleLane} title={ landmark }></td>
                             )}
                             </tr>
                         )}

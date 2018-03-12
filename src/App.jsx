@@ -12,6 +12,7 @@ import LoginStore from 'stores/LoginStore';
 import Login from 'pages/Login.jsx';
 import Home from 'pages/Home.jsx';
 import Hangar from 'pages/Hangar.jsx';
+import Tools from 'pages/Tools.jsx';
 
 /**
  * Use
@@ -32,6 +33,7 @@ const routes = (
             <Route path="login" component={Login} />
             <Route path="home" component={Home}></Route>
             <Route path="hangar" component={Hangar}></Route>
+            <Route path="tools" component={Tools}></Route>
             {/* <IndexRoute component={Desktop} onEnter={requireAuth} /> */}
         </Router>
     </LocaleProvider>

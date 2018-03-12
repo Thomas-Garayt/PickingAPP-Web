@@ -34,10 +34,11 @@ export default class Notifications extends React.Component {
     render() {
         const { notifications } = this.state;
 
+        console.log(notifications);
+
         const customStyleCol = {
             marginBottom: 16,
         };
-
 
         return (
             <Row gutter={16}>
@@ -47,7 +48,7 @@ export default class Notifications extends React.Component {
                         <Card title={ n.type } bordered={true}>
                             Position : { n.productPosition.position.lane } { n.productPosition.position.landmark } { n.productPosition.position.section } { n.productPosition.position.shelf }
                             <br/>
-                            Code EAN13 : { n.productPosition.product.ean13 }
+                            Produit : { n.productPosition.product.ean13 }
                             <br/>
                             <a href="#">Voir sur le plan du hangar</a>
                         </Card>

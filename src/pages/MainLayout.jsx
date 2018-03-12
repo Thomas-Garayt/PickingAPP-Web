@@ -47,6 +47,9 @@ export default class MainLayout extends React.Component {
                     <Menu.Item key="hangar">
                         <Link to={{pathname: 'hangar'}}>Gestion Hangar</Link>
                     </Menu.Item>
+                    <Menu.Item key="tools">
+                        <Link to={{pathname: 'tools'}}>Outils Admin</Link>
+                    </Menu.Item>
                     <SubMenu title={<span><Icon type="setting" />Navigation Three - Submenu</span>}>
                         <MenuItemGroup title="Item 1">
                             <Menu.Item key="setting:1">Option 1</Menu.Item>
